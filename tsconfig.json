@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "ignoreDeprecations": "6.0",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "@types/mocha",
+      "webdriverio",
+      "@wdio/globals/types",
+      "@wdio/mocha-framework"
+    ],
+    "sourceMap": true
+  },
+  "include": [
+    "wdio.conf.ts",
+    "test/**/*.ts"
+  ]
+}

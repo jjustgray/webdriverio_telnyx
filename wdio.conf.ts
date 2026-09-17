@@ -1,6 +1,4 @@
-import type { Options } from '@wdio/types';
-
-export const config: Options.Testrunner = {
+export const config: WebdriverIO.Config = {
   runner: 'local',
   specs: ['./test/specs/**/*.ts'],
   maxInstances: 1,
@@ -21,11 +19,5 @@ export const config: Options.Testrunner = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000
-  },
-  autoCompileOpts: {
-    autoCompile: true,
-    tsNodeOpts: {
-      project: './tsconfig.json'
-    }
   }
 };

@@ -2,11 +2,12 @@ import type { Options } from '@wdio/types';
 
 export const config: Options.Testrunner = {
     runner: 'local',
+    maxInstances: process.env.CI ? 1 : 2,
     specs: ['./test/specs/**/*.ts'],
     logLevel: 'error',
     bail: 0,
     baseUrl: 'https://telnyx.com',
-    waitforTimeout: 7000,
+    waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',

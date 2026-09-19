@@ -1,6 +1,6 @@
 import { config as baseConfig } from './wdio.conf.js';
 
-export const config = {
+export const config: WebdriverIO.Config = {
     ...baseConfig,
     capabilities: [{
         browserName: 'MicrosoftEdge',
@@ -11,7 +11,6 @@ export const config = {
                 '--disable-dev-shm-usage',
                 '--disable-gpu'
             ]
-        },
-        'wdio:enforceWebDriverClassic': true
+        }
     }]
 };

@@ -40,6 +40,10 @@ jobs:
           CI: true
         continue-on-error: true
 
+      - name: Install Microsoft Edge
+        if: matrix.browser == 'edge'
+        run: npx playwright install msedge
+
       - name: Upload Allure Results Artifact
         if: always()
         uses: actions/upload-artifact@v4

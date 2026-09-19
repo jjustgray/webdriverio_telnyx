@@ -4,8 +4,8 @@
   "private": true,
   "description": "WebdriverIO end-to-end tests for Telnyx",
   "scripts": {
-    "test": "wdio run ./wdio.chrome.conf.ts",
-    "test:chrome": "wdio run ./wdio.chrome.conf.ts",
+    "test": "wdio run ./wdio.conf.ts",
+    "test:chrome": "wdio run ./wdio.conf.ts",
     "test:firefox": "wdio run ./wdio.firefox.conf.ts",
     "test:edge": "wdio run ./wdio.edge.conf.ts",
     "test:single": "wdio run ./wdio.chrome.conf.ts --spec",

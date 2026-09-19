@@ -6,6 +6,7 @@ export const config: WebdriverIO.Config = {
         browserName: 'firefox',
         'moz:firefoxOptions': {
             args: ['-headless']
-        }
+        },
+        'wdio:enforceWebDriverClassic': true
     }]
 };

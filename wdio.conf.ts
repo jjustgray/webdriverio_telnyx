@@ -4,7 +4,7 @@ export const config: Options.Testrunner = {
     runner: 'local',
     specs: ['./test/specs/**/*.ts'],
     maxInstances: 5,
-    logLevel: 'info',
+    logLevel: 'error',
     bail: 0,
     baseUrl: 'https://telnyx.com',
     waitforTimeout: 7000,

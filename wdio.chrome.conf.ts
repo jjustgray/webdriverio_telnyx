@@ -12,6 +12,7 @@ export const config: WebdriverIO.Config = {
                 '--disable-gpu',
                 '--window-size=1920,1080'
             ]
-        }
+        },
+        'wdio:enforceWebDriverClassic': true
     }]
 };

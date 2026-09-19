@@ -7,6 +7,7 @@ export const config = {
         browserName: 'MicrosoftEdge',
         'ms:edgeOptions': {
             args: process.env.CI ? ['--headless', '--disable-gpu', '--no-sandbox'] : []
-        }
+        },
+        'wdio:enforceWebDriverClassic': true
     }]
 };

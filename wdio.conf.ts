@@ -3,7 +3,6 @@ import type { Options } from '@wdio/types';
 export const config: Options.Testrunner = {
     runner: 'local',
     specs: ['./test/specs/**/*.ts'],
-    maxInstances: 5,
     logLevel: 'error',
     bail: 0,
     baseUrl: 'https://telnyx.com',

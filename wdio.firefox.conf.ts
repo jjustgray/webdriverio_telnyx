@@ -5,7 +5,8 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         browserName: 'firefox',
         'moz:firefoxOptions': {
-            args: ['-headless']
+            args: ['-headless'],
+            binary: process.env.CI ? '/ms-playwright/firefox-1454/firefox/firefox' : undefined
         },
         'wdio:enforceWebDriverClassic': true
     }]

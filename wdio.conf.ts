@@ -1,23 +1,37 @@
+import type { Options } from '@wdio/types';
+
 export const config: WebdriverIO.Config = {
-  runner: 'local',
-  specs: ['./test/specs/**/*.ts'],
-  maxInstances: 1,
-  capabilities: [{
-    browserName: 'chrome',
-    'goog:chromeOptions': {
-      args: ['--window-size=1920,1080']
+    runner: 'local',
+    specs: ['./test/specs/**/*.ts'],
+    maxInstances: 3,
+    capabilities: [{
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['--headless', '--disable-gpu']
+        }
+    }],
+    logLevel: 'info',
+    bail: 0,
+    baseUrl: 'https://telnyx.com',
+    waitforTimeout: 7000,
+    connectionRetryTimeout: 120000,
+    connectionRetryCount: 3,
+    framework: 'mocha',
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: false,
+        }]
+    ],
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    },
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+        if (!passed) {
+            await browser.takeScreenshot();
+        }
     }
-  }],
-  logLevel: 'info',
-  baseUrl: process.env.BASE_URL ?? 'https://telnyx.com',
-  waitforTimeout: 10000,
-  connectionRetryTimeout: 120000,
-  connectionRetryCount: 2,
-  framework: 'mocha',
-  reporters: ['spec'],
-  services: [],
-  mochaOpts: {
-    ui: 'bdd',
-    timeout: 60000
-  }
 };

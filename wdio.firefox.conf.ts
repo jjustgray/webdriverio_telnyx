@@ -1,12 +1,11 @@
 import { config as baseConfig } from './wdio.conf.js';
 
-export const config = {
+export const config: WebdriverIO.Config = {
     ...baseConfig,
     capabilities: [{
-        maxInstances: 2,
         browserName: 'firefox',
         'moz:firefoxOptions': {
-            args: process.env.CI ? ['-headless'] : []
+            args: ['-headless']
         }
     }]
 };

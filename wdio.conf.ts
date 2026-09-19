@@ -1,15 +1,9 @@
 import type { Options } from '@wdio/types';
 
-export const config: WebdriverIO.Config = {
+export const config: Options.Testrunner = {
     runner: 'local',
     specs: ['./test/specs/**/*.ts'],
-    maxInstances: 3,
-    capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu']
-        }
-    }],
+    maxInstances: 5,
     logLevel: 'info',
     bail: 0,
     baseUrl: 'https://telnyx.com',

@@ -4,7 +4,7 @@
   "private": true,
   "description": "WebdriverIO end-to-end tests for Telnyx",
   "scripts": {
-    "clean": "rimraf allure-results allure-report",
+    "clean": "rimraf allure-results/* allure-report/*",
     "pretest": "npm run clean",
     "pretest:chrome": "npm run clean",
     "pretest:firefox": "npm run clean",

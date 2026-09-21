@@ -6,7 +6,7 @@ export const config: Options.Testrunner = {
     specs: ['./test/specs/**/*.ts'],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://telnyx.com',
+    baseUrl: process.env.BASE_URL || 'https://telnyx.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,

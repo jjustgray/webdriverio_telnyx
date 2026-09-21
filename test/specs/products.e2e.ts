@@ -16,7 +16,7 @@ describe('Products page', () => {
   });
 
   it('TC-07 opens the open-source builds section using its anchor link', async () => {
-    await ProductsPage.openSourceBuildsLink.click();
+    await ProductsPage.openSourceBuildsSection();
 
     await expect(browser).toHaveUrl(expect.stringContaining('#open-source-builds'));
   });

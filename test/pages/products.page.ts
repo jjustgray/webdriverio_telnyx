@@ -38,7 +38,17 @@ class ProductsPage {
   }
 
   async openPrimitivesSection(): Promise<void> {
+    await this.browsePrimitivesLink.waitForDisplayed();
+    await this.browsePrimitivesLink.scrollIntoView({ block: 'center' });
+    await this.browsePrimitivesLink.waitForClickable();
     await this.browsePrimitivesLink.click();
+  }
+
+  async openSourceBuildsSection(): Promise<void> {
+    await this.openSourceBuildsLink.waitForDisplayed();
+    await this.openSourceBuildsLink.scrollIntoView({ block: 'center' });
+    await this.openSourceBuildsLink.waitForClickable();
+    await this.openSourceBuildsLink.click();
   }
 
   async openVoiceApi(): Promise<void> {
